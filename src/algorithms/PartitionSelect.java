@@ -6,10 +6,10 @@ public class PartitionSelect {
 
     public static int PSelect(int[] a, int k){ //returns kth smallest in a
 
-        return PSelecter(a, 0, a.length-1, k);
+        return PSelector(a, 0, a.length-1, k);
     }
 
-    private static int PSelecter(int[] a, int left, int right, int k) {
+    private static int PSelector(int[] a, int left, int right, int k) {
         if (left==right) { return a[left];}
 
         int pivot_index = partition(a, left, right);
@@ -19,14 +19,14 @@ public class PartitionSelect {
             return a[pivot_index];
         }else if (k-1<pivot_index) {
 //            System.out.println("going from "+left+" to "+(pivot_index-1));
-            return PSelecter(a, left, pivot_index-1, k);
+            return PSelector(a, left, pivot_index-1, k);
         }else{ // k is bigger than pivot_index
 //            System.out.println("going from "+(pivot_index+1)+" to "+right);
-            return PSelecter(a, pivot_index+1, right, k);
+            return PSelector(a, pivot_index+1, right, k);
         }
     }
 
-    private static int partition(int[] a, int left, int right) {
+    public static int partition(int[] a, int left, int right) {
         int pivot = a[right];
 //        System.out.println("pivot chosen: "+pivot);
         int pivot_location = left;

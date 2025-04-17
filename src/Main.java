@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args){
 
        int[] test = {4, 6, 1, 2, 6, 8};
-       System.out.println(PartitionSelect.PSelect(test, 3));
+       System.out.println(MedianOfMediansSelect.MedSelect(test, 3));
     }
 
     public static void TestSelect(){
